@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 from colorama import Fore, Back, Style
+from readchar import readkey, key
 
 def int_pos(s: str)  -> int:
     # torna o tipo de numero inteiro positivo
@@ -41,9 +42,11 @@ def main():
     else:
         print('Test runnin up to '+ str(args.max_value) + ' inputs')
 
+    #basta clicar numa tecla para continuar o programa
+    print('Press any key to start the test')
+    k = readkey()
+
     
-
-
-
+    
 if __name__ == '__main__':
     main()
