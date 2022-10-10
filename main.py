@@ -37,18 +37,18 @@ def main():
 
     use_time_mode, max_value = obter_args(args)
     
-    data= {
-        'accuracy': 0.0,
-        'inputs': [],
-        'number_of_hits': 0,
-        'number_of_types': 0,
-        'test_duration': 0.0,
-        'test_end': '',
-        'test_start': '',
-        'type_average_duration': 0.0,
-        'type_hit_average_duration': 0.0,
-        'type_miss_average_duration': 0.0
-    }
+    # data= {
+    #     'accuracy': 0.0,
+    #     'inputs': [],
+    #     'number_of_hits': 0,
+    #     'number_of_types': 0,
+    #     'test_duration': 0.0,
+    #     'test_end': '',
+    #     'test_start': '',
+    #     'type_average_duration': 0.0,
+    #     'type_hit_average_duration': 0.0,
+    #     'type_miss_average_duration': 0.0
+    # }
    
     # para saber como se chamam as variaveis de entrada
         # print(args)
@@ -70,7 +70,7 @@ def main():
     print('Press any key to start the test')  
     k = readkey()
 
-    Input = namedtuple('Input',([requested,received,duration]))
+    #Input = namedtuple('Input',([requested,received,duration]))
     
 
     inicial_time = time()
