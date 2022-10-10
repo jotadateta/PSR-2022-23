@@ -20,9 +20,9 @@ def main():
     parser=argparse.ArgumentParser(
         description='''Definition of test mode ''') 
     parser.add_argument('-utm', '--use_time_mode', action='store_true', 
-        help=" Max number of seconds.")
+        help=" Mode: Time")
     parser.add_argument('-mv', '--max_value', type=int_pos, required=False, 
-        help=" Imput number.")
+        help=" Input number.")
     args=parser.parse_args()
 
 
@@ -31,7 +31,7 @@ def main():
         # print(args.use_time_mode) #string o valor
         # print(args.max_value) #o valor sai em string
     print(vars(args))
-    print("Typing Test, group 5, October 2022")
+    print(Style.BRIGHT + Fore.RED + 'PARI '+Style.RESET_ALL+"Typing Test, group 5, October 2022")
 
     # detetar o modo se é por tempo ou tentativas.
     if args.use_time_mode==True:
@@ -46,7 +46,7 @@ def main():
     print('Press any key to start the test')
     k = readkey()
 
-    
+
     
 if __name__ == '__main__':
     main()
