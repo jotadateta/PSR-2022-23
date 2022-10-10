@@ -7,7 +7,7 @@ class Input:
         
     def __str__(self):
         
-        return "requested = " + str(self.requested) +  "received = " + str(self.received) + "duration = " + str(self.duration)
+        return "requested = " + str(self.requested) +  " received = " + str(self.received) + " duration = " + str(self.duration)
     
     
     def __repr__(self):

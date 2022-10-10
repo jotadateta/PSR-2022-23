@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from input import *
-
+from pprint import pprint
 
 number_of_hits = 12
 number_of_types = 4
@@ -16,7 +16,7 @@ type_miss_average_duration = 3123.0
 def main():
     
     #dicionario ao qual se vai indexar os valores
-    namedtuples = {'accuracy': 0.0,
+    my_dict = {'accuracy': 0.0,
     'inputs': [],
     'number_of_hits': [],
     'number_of_types': [],
@@ -36,29 +36,30 @@ def main():
     
     inputs = []
     
-    for x in range(3):
+    for x in range(5):
 
         
         requested += 1
         received += 2
         duration += 4
 
-        input = Input(requested, received, duration)
-        inputs.append(input)
+        namedtuples = Input(requested, received, duration)
+        inputs.append(namedtuples)
         
         
         
     ##################################################
-    namedtuples['inputs'] = inputs
+    my_dict['inputs'] = inputs
     #print(inputs[0])
     
-    
+    ###metodo para o print normal#####
     # Iterate over the keys in dictionary, access value & print line by line
-    for key in namedtuples:
-        print(key, ' : ', namedtuples[key])
+    #for key in namedtuples:
+    #    print(key, ' : ', namedtuples[key])
     
     
-    #print (namedtuples)
+    
+    pprint(my_dict)
     
     
     
