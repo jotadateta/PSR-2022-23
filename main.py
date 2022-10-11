@@ -79,37 +79,62 @@ def main():
     
     
     start_time=time.time()
-    variaveis=0
+    number_inputs=0
 
     received_letters.append(received)
     request_letters.append(requested)
     # while loop modo de paragem por tempo
+    if args.use_time_mode==True:
+         while True:
+            ##gera letra aleatória
+            end_time=time.time()
+            diferenca=end_time-start_time
 
-    while True:
-        ##gera letra aleatória
-        end_time=time.time()
-        diferenca=end_time-start_time
+            if received == chr(32): 
+                break
+            elif diferenca >=int(args.max_value):
+                print(Style.BRIGHT + Fore.RED + str(round(diferenca,3))+Style.RESET_ALL+' segundos. Passou o limite de '+Style.BRIGHT + Fore.GREEN +str(args.max_value)+Style.RESET_ALL+' segundos.')
+                break
+            elif requested == received:
+                print('You typed ' + Fore.GREEN + received + Style.RESET_ALL)
+            else:
+                print('You typed ' + Fore.RED + received + Style.RESET_ALL)
+            
+            requested =  random.choice(my_list(''))  
+            print('Type letter '+ Fore.YELLOW + requested + Style.RESET_ALL)
 
-        if received == chr(32): 
-            break
-        elif diferenca >=int(args.max_value):
-            print(Style.BRIGHT + Fore.RED + str(round(diferenca,3))+Style.RESET_ALL+' segundos. Passou o limite de '+Style.BRIGHT + Fore.GREEN +str(args.max_value)+Style.RESET_ALL+' segundos.')
-            break
-        elif requested == received:
-            print('You typed ' + Fore.GREEN + received + Style.RESET_ALL)
-        else:
-            print('You typed ' + Fore.RED + received + Style.RESET_ALL)
+            ##read letter input
+            received = readkey()
+            
+            received_letters.append(received)
+            request_letters.append(requested)
         
-        requested =  random.choice(my_list(''))  
-        print('Type letter '+ Fore.YELLOW + requested + Style.RESET_ALL)
+        return received_letters, request_letters   
+    else:
+        while True:
+            ##gera letra aleatória
+            number_inputs +=1
 
-        ##read letter input
-        received = readkey()
-        
-        received_letters.append(received)
-        request_letters.append(requested)
-        
-    return received_letters, request_letters
+            if received == chr(32): 
+                break
+            elif number_inputs >=int(args.max_value):
+                print(Style.BRIGHT + Fore.RED + str(round(diferenca,3))+Style.RESET_ALL+' segundos. Passou o limite de '+Style.BRIGHT + Fore.GREEN +str(args.max_value)+Style.RESET_ALL+' segundos.')
+                break
+            elif requested == received:
+                print('You typed ' + Fore.GREEN + received + Style.RESET_ALL)
+            else:
+                print('You typed ' + Fore.RED + received + Style.RESET_ALL)
+            
+            requested =  random.choice(my_list(''))  
+            print('Type letter '+ Fore.YELLOW + requested + Style.RESET_ALL)
+
+            ##read letter input
+            received = readkey()
+            
+            received_letters.append(received)
+            request_letters.append(requested)
+            
+        return received_letters, request_letters
         
     
        
