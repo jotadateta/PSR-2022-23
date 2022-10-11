@@ -85,7 +85,7 @@ def main():
     request_letters.append(requested)
     # while loop modo de paragem por tempo
     if args.use_time_mode==True:
-         while True:
+        while True:
             ##gera letra aleatória
             end_time=time.time()
             diferenca=end_time-start_time
