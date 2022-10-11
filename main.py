@@ -9,7 +9,6 @@ from colorama import Fore, Back, Style
 from readchar import readkey, key
 import time
 
-
 def int_pos(s: str)  -> int:
     # torna o tipo de numero inteiro positivo
 
@@ -63,24 +62,37 @@ def main():
     #basta clicar numa tecla para continuar o programa
     print('Press any key to start the test')  
     k = readkey()
-    
 
-    # while loop
+    #variavel aleatoria
+    requested =  random.choice(my_list(''))  
+    print('Type letter '+ Fore.YELLOW + requested + Style.RESET_ALL)
+    received = readkey()
+
+    start_time=time.time()
+    variaveis=0
+
+    # while loop modo de paragem por tempo
+
     while True:
-            
+        ##gera letra aleatória
+        end_time=time.time()
+        diferenca=end_time-start_time
 
-        #gera letra aleatória
-        requested =  random.choice(my_list(''))  
-        print('Type letter '+ Fore.YELLOW + requested + Style.RESET_ALL)
-
-        #read letter input
-        received = readkey()
-        if received == chr(32): #or diferenca <= args.max_value:
+        if received == chr(32): 
+            break
+        elif diferenca >=int(args.max_value):
+            print(Style.BRIGHT + Fore.RED + str(round(diferenca,3))+Style.RESET_ALL+' segundos. Passou o limite de '+Style.BRIGHT + Fore.GREEN +str(args.max_value)+Style.RESET_ALL+' segundos.')
             break
         elif requested == received:
             print('You typed ' + Fore.GREEN + received + Style.RESET_ALL)
         else:
             print('You typed ' + Fore.RED + received + Style.RESET_ALL)
+        
+        requested =  random.choice(my_list(''))  
+        print('Type letter '+ Fore.YELLOW + requested + Style.RESET_ALL)
+
+        ##read letter input
+        received = readkey()
 
        
         
