@@ -116,13 +116,13 @@ def main():
                         counter_points += 1
                         end_time_certo=time()
                         tempo_certo=end_time_certo-end_time
-                        duracao.append(tempo_certo)
+                        duracao.append(round(tempo_certo,3))
                         tempo_das_certas.append(tempo_certo)
                     else:
                         print('You typed ' + Fore.RED + received + Style.RESET_ALL)
                         end_time_errado=time()
                         tempo_errado=end_time_errado-end_time
-                        duracao.append(tempo_errado)
+                        duracao.append(round(tempo_errado,3))
                         tempo_das_erradas.append(tempo_errado)
             else:
                 print(Style.BRIGHT + Fore.RED + str(round(diferenca,3))+Style.RESET_ALL+' segundos. Passou o limite de '+Style.BRIGHT + Fore.GREEN +str(args.max_value)+Style.RESET_ALL+' segundos.')
@@ -162,13 +162,13 @@ def main():
                         counter_points += 1
                         end_time_certo=time()
                         tempo_certo=end_time_certo-end_time
-                        duracao.append(tempo_certo)
+                        duracao.append(round(tempo_certo,3))
                         tempo_das_certas.append(tempo_certo)
                     else:
                         print('You typed ' + Fore.RED + received + Style.RESET_ALL)
                         end_time_errado=time()
                         tempo_errado=end_time_errado-end_time
-                        duracao.append(tempo_errado)
+                        duracao.append(round(tempo_errado,3))
                         tempo_das_erradas.append(tempo_errado)
             else:
                 print(Style.BRIGHT + Fore.RED + str(number_characters)+Style.RESET_ALL+' caracters. Atingiu o limite de '+Style.BRIGHT + Fore.GREEN +str(args.max_value)+Style.RESET_ALL+' caracters.')
