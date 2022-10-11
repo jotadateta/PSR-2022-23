@@ -72,7 +72,7 @@ def main_run():
       
     pprint(my_dict)
     
-    write(counter_points)
+    write(counter_points, test_duration)
     
     return 
     

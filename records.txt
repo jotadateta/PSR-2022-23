@@ -1,3 +1,2 @@
-
-Valor obtido de acertos 12
-Valor obtido de acertos 14
+Valor obtido de acertos 13com o tempo de10.054
+Valor obtido de acertos 13 com o tempo de 10.554

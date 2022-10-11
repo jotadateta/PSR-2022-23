@@ -2,9 +2,9 @@
 
 
 
-def write(counter_hits):
+def write(counter_hits, test_duration):
     f = open("records.txt", "a")
-    f.write("Valor obtido de acertos " + str(counter_hits))
+    f.write("Valor obtido de acertos " + str(counter_hits) + " com o tempo de " + str(round(test_duration,3)))
     f.write("\n")
     f.close()
 
