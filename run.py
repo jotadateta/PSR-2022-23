@@ -6,12 +6,13 @@ from collections import namedtuple
 from urllib import request
 from pprint import pprint
 from main import main
+from database import write
 
 
 namedtuples = []
 
 
-def main_jota():
+def main_run():
     soma_certas=0
     soma_erradas=0
     inputs = []
@@ -71,10 +72,12 @@ def main_jota():
       
     pprint(my_dict)
     
-
+    write(counter_points)
+    
+    return 
     
     
     
 if __name__ == '__main__':
     
-    main_jota()
+    main_run()
