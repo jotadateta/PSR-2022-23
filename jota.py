@@ -52,18 +52,15 @@ def main_jota():
         
         
         
+        
+        
     ##################################################
     my_dict['inputs'] = inputs
     #print(inputs[0])
-    
-    ###metodo para o print normal#####
-    # Iterate over the keys in dictionary, access value & print line by line
-    #for key in namedtuples:
-    #    print(key, ' : ', namedtuples[key])
-    
-    
-    
+      
     pprint(my_dict)
+    
+
     
     
     
