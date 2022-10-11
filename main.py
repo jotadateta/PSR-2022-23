@@ -7,6 +7,8 @@ import time
 from urllib import request
 from colorama import Fore, Back, Style
 from readchar import readkey, key
+import time
+
 
 def int_pos(s: str)  -> int:
     # torna o tipo de numero inteiro positivo
@@ -20,11 +22,18 @@ def int_pos(s: str)  -> int:
     return v
 
 
-def obter_args(args):
-    return (args.use_time_mode,args.max_value)
+def my_list(my_list):
+    my_list=[]
+    for x in range(97,123):
+        letter=chr(x)
+        my_list.append(letter)
+    return my_list
 
+   
 
 def main():
+
+    
     #-h
     parser=argparse.ArgumentParser(
         description='''Definition of test mode ''') 
@@ -32,11 +41,7 @@ def main():
         help=" Mode: Time")
     parser.add_argument('-mv', '--max_value', type=int_pos, required=False, 
         help=" Input number.")
-    args=parser.parse_args()
-
-
-    use_time_mode, max_value = obter_args(args)
-    
+    args=parser.parse_args()   
    
    
     # para saber como se chamam as variaveis de entrada
@@ -59,29 +64,25 @@ def main():
     print('Press any key to start the test')  
     k = readkey()
     
-    
 
-    inicial_time = time.time()
-    
     # while loop
     while True:
-
-        #start game time
-        count_time = time.time()
+            
 
         #gera letra aleatória
-        requested =  random.choice(string.ascii_letters)  
+        requested =  random.choice(my_list(''))  
         print('Type letter '+ Fore.YELLOW + requested + Style.RESET_ALL)
 
         #read letter input
         received = readkey()
-        if received == chr(32):
+        if received == chr(32): #or diferenca <= args.max_value:
             break
         elif requested == received:
             print('You typed ' + Fore.GREEN + received + Style.RESET_ALL)
         else:
             print('You typed ' + Fore.RED + received + Style.RESET_ALL)
-        
+
+       
         
 
 
