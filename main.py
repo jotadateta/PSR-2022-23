@@ -9,6 +9,10 @@ from colorama import Fore, Back, Style
 from readchar import readkey, key
 import time
 
+
+
+
+
 def int_pos(s: str)  -> int:
     # torna o tipo de numero inteiro positivo
 
@@ -31,7 +35,10 @@ def my_list(my_list):
    
 
 def main():
-
+    #lista de letras recebidas
+    received_letters = []
+    request_letters = []
+    
     
     #-h
     parser=argparse.ArgumentParser(
@@ -61,16 +68,21 @@ def main():
 
     #basta clicar numa tecla para continuar o programa
     print('Press any key to start the test')  
-    k = readkey()
-
+    #fica a aguardar 
+    readkey()
+    
+    print('teste')
     #variavel aleatoria
     requested =  random.choice(my_list(''))  
     print('Type letter '+ Fore.YELLOW + requested + Style.RESET_ALL)
     received = readkey()
-
+    
+    
     start_time=time.time()
     variaveis=0
 
+    received_letters.append(received)
+    request_letters.append(requested)
     # while loop modo de paragem por tempo
 
     while True:
@@ -93,7 +105,13 @@ def main():
 
         ##read letter input
         received = readkey()
-
+        
+        received_letters.append(received)
+        request_letters.append(requested)
+        
+    return received_letters, request_letters
+        
+    
        
         
 

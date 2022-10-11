@@ -2,8 +2,11 @@
 
 #jota
 
+from collections import namedtuple
+from urllib import request
 from input import *
 from pprint import pprint
+from main import main
 
 number_of_hits = 12
 number_of_types = 4
@@ -14,11 +17,17 @@ type_average_duration = 0.3133
 type_hit_average_duration = 0.0
 type_miss_average_duration = 3123.0
 
+namedtuples = []
 
-def main():
+def main_jota():
+    inputs = []
+    received_letters, requested_letters = main()
+    print(received_letters)
+    
+    #print('received' + str(received_letters) + 'requested' + str(requested_letters)) 
     
     #dicionario ao qual se vai indexar os valores
-    my_dict = {'accuracy': 0.0,
+    my_dict = {'accuracy': [],
     'inputs': [],
     'number_of_hits': [],
     'number_of_types': [],
@@ -30,22 +39,15 @@ def main():
     'type_miss_average_duration': []}
     
     
+    duration = 32.42
     
-    # criar a lista de inputs
-    requested = 1
-    received = 1
-    duration = 52.42
+    print(len(requested_letters))
     
-    inputs = []
-    
-    for x in range(5):
+    for x in range(len(requested_letters)):
 
-        
-        requested += 1
-        received += 2
         duration += 4
 
-        namedtuples = Input(requested, received, duration)
+        namedtuples = (requested_letters[x], received_letters[x], duration)
         inputs.append(namedtuples)
         
         
@@ -67,4 +69,4 @@ def main():
     
 if __name__ == '__main__':
     
-    main()
+    main_jota()
