@@ -17,7 +17,7 @@ from readchar import readkey, key
 
 def int_pos(s: str)  -> int:
     
-    # function to make the number positive
+    # function to test if number is positive
 
     try:
         v=int(s)
@@ -58,7 +58,7 @@ def main():
         description='''Definition of test mode ''') 
     parser.add_argument('-utm', '--use_time_mode', action='store_true', 
         help=" Mode: Time")
-    parser.add_argument('-mv', '--max_value', type=int_pos, required=False, 
+    parser.add_argument('-mv', '--max_value',nargs='?', const=10, type=int_pos, required=True,
         help=" Input number.")
     if len(sys.argv)==1:
         parser.print_help(sys.stderr)
@@ -101,7 +101,7 @@ def main():
     
     
     
-    # timmers functions
+    # timmers functions and counters
     start_time=time()
     start_c=ctime()
     number_characters=-1
@@ -114,13 +114,13 @@ def main():
     # received_letters.append(received)
     # request_letters.append(requested)
     
-# Creation of while loop to control the break 
-    # condition for the time mode
+# condition for the time mode
     if args.use_time_mode==True:
+        #Creation of while loop to control the break
         while True:
                 
             end_time =time()
-            diferenca = end_time - start_time  
+            diferenca = end_time - start_time  #allways that loop pass for here calculate the time passed.
             
             if diferenca <= int(args.max_value):
 
@@ -162,11 +162,12 @@ def main():
             request_letters.append(requested)
     # condition for the max value game 
     else:
+        #Creation of while loop to control the break
         while True:
             end_time = time()
             diferenca = end_time - start_time 
         
-            number_characters +=1 
+            number_characters +=1 #counter of characters answered
             
             if number_characters < int(args.max_value):
 
@@ -174,12 +175,15 @@ def main():
                 requested =  random.choice(my_list(''))  
                 print('Type letter '+ Fore.YELLOW + requested + Style.RESET_ALL)
                 received = readkey()
-
+                
+                # break if user press spacebar 
                 if received == chr(32):
                     tempo_final=ctime() 
                     break
                 else:
                     #print(Style.BRIGHT + Fore.RED + str(round(diferenca,3))+Style.RESET_ALL+' segundos. Passou o limite de '+Style.BRIGHT + Fore.GREEN +str(args.max_value)+Style.RESET_ALL+' segundos.')
+                    
+                    # correct answer
                     if requested == received:
                         print('You typed ' + Fore.GREEN + received + Style.RESET_ALL)
                         counter_points += 1
@@ -187,6 +191,7 @@ def main():
                         tempo_certo=end_time_certo-end_time
                         duracao.append(round(tempo_certo,3))
                         tempo_das_certas.append(tempo_certo)
+                    # incorrect answer
                     else:
                         print('You typed ' + Fore.RED + received + Style.RESET_ALL)
                         end_time_errado=time()
@@ -194,6 +199,7 @@ def main():
                         duracao.append(round(tempo_errado,3))
                         tempo_das_erradas.append(tempo_errado)
             else:
+                # activate when you went of the loop for the time 
                 print(Style.BRIGHT + Fore.RED + str(number_characters)+Style.RESET_ALL+' characters. Reached the limit of '+Style.BRIGHT + Fore.GREEN +str(args.max_value)+Style.RESET_ALL+' characters.')
                 tempo_final=ctime()
                 break
@@ -201,16 +207,17 @@ def main():
             
             received_letters.append(received)
             request_letters.append(requested)
+
+    #calculate of accuracy. if had no right answers accuracy=0
     if len(request_letters)==0:
         accuracy=0
     else:
-        accuracy = counter_points/len(request_letters)
-            #type_average_duration = round(diferenca/ len(received_letters),3)
+        #calculate accuracy
+        accuracy = round(counter_points/len(request_letters),3)
+
     return received_letters, request_letters, counter_points, diferenca,start_c,tempo_final, accuracy, tempo_das_certas, tempo_das_erradas, duracao
         
 
     
-            
-
 if __name__ == '__main__':
     main()
