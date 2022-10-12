@@ -90,7 +90,7 @@ def main():
 
     
     # Standby, waiting for the user to press any key 
-    print('Press any key to start the test')   
+    print(Style.BRIGHT + Fore.BLUE+'Press any key to start the test'+Style.RESET_ALL)   
     readkey()
     
     

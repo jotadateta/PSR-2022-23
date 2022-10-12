@@ -5,3 +5,10 @@ Valor obtido de acertos 1 com o tempo de 1.35
 Valor obtido de acertos 0 com o tempo de 1.309
 Valor obtido de acertos 0 com o tempo de 0.0
 Valor obtido de acertos 0 com o tempo de 0.0
+Valor obtido de acertos 4 com o tempo de 14.118
+Valor obtido de acertos 3 com o tempo de 5.201
+Valor obtido de acertos 0 com o tempo de 0.0
+Valor obtido de acertos 0 com o tempo de 20.066
+Valor obtido de acertos 0 com o tempo de 0.0
+Valor obtido de acertos 4 com o tempo de 5.4
+Valor obtido de acertos 0 com o tempo de 0.0
