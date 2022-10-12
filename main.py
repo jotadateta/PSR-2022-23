@@ -6,6 +6,7 @@ import argparse
 from collections import namedtuple
 import string
 import random
+import sys
 from time import time, ctime
 from urllib import request
 from colorama import Fore, Back, Style
@@ -59,8 +60,13 @@ def main():
         help=" Mode: Time")
     parser.add_argument('-mv', '--max_value', type=int_pos, required=False, 
         help=" Input number.")
+    if len(sys.argv)==1:
+        parser.print_help(sys.stderr)
+        sys.exit(1)
     args=parser.parse_args()   
-   
+    
+    print(str(args.max_value))
+    
    
     # Just for testing (ignore)
         # print(args)
@@ -72,9 +78,11 @@ def main():
     print(Style.BRIGHT + Fore.RED + 'PARI '+Style.RESET_ALL+"Typing Test, group 5, October 2022")
 
     # detect wich mode is active and assosiate the arguments
+    
     if args.use_time_mode==True:
         if str(args.max_value)=='None':
-            print('Insert a mv MAX_NUMBER')
+            print('ERROR: Insert a -mv (MAX_NUMBER)')
+            sys.exit(1)
         else:
             print('Test runnin up to '+Style.BRIGHT + Fore.GREEN + str(args.max_value) + ' seconds'+Style.RESET_ALL)
     else:
@@ -152,7 +160,6 @@ def main():
             
             received_letters.append(received)
             request_letters.append(requested)
-            accuracy = counter_points/len(request_letters)
     # condition for the max value game 
     else:
         while True:
@@ -194,7 +201,10 @@ def main():
             
             received_letters.append(received)
             request_letters.append(requested)
-            accuracy = counter_points/len(request_letters)
+    if len(request_letters)==0:
+        accuracy=0
+    else:
+        accuracy = counter_points/len(request_letters)
             #type_average_duration = round(diferenca/ len(received_letters),3)
     return received_letters, request_letters, counter_points, diferenca,start_c,tempo_final, accuracy, tempo_das_certas, tempo_das_erradas, duracao
         

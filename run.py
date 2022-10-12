@@ -20,8 +20,10 @@ def main_run():
     #print("letras recebidas " + str(received_letters))
     #print("certas " + str(counter_points))
     
-
-    type_average_duration=round(test_duration/len(received_letters),3)
+    if len(received_letters)==0:
+        type_average_duration=0
+    else:
+        type_average_duration=round(test_duration/len(received_letters),3)
 
     if len(tempo_das_certas)==len(received_letters):
         type_hit_average_duration=type_average_duration
