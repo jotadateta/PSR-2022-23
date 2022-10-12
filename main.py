@@ -194,7 +194,7 @@ def main():
                         duracao.append(round(tempo_errado,3))
                         tempo_das_erradas.append(tempo_errado)
             else:
-                print(Style.BRIGHT + Fore.RED + str(number_characters)+Style.RESET_ALL+' caracters. Atingiu o limite de '+Style.BRIGHT + Fore.GREEN +str(args.max_value)+Style.RESET_ALL+' caracters.')
+                print(Style.BRIGHT + Fore.RED + str(number_characters)+Style.RESET_ALL+' characters. Reached the limit of '+Style.BRIGHT + Fore.GREEN +str(args.max_value)+Style.RESET_ALL+' characters.')
                 tempo_final=ctime()
                 break
             
