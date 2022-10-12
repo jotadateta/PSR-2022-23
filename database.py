@@ -6,6 +6,3 @@ def write(hit_counter, test_duration):
     f.write("\n")
     f.close()
 
-#open and read the file after the appending:
-#f = open("records.txt", "r")
-#print(f.read()) 
