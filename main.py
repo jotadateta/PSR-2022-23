@@ -56,10 +56,7 @@ def main():
         sys.exit(1)
     args = parser.parse_args()   
     
-    print(str(args.max_value))
-    
    
-    
     # Initial print
     print(Style.BRIGHT + Fore.RED + 'PARI '+Style.RESET_ALL+"Typing Test, group 5, October 2022")
 

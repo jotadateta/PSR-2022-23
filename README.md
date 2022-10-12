@@ -17,7 +17,7 @@ Após o termino do jogo serão apresentadas diferentes paramêtros que resumem o
 Para executar o typing test, no diretório da pasta com os ficheiros .py executar no terminal o seguinte comando:
 `$ python3 run.py -mv 5`   
 ou
-`$ python3 run.py -mv -utm 10`
+`$ python3 run.py -utm -mv 10`
 
 ## Descrição do código
 

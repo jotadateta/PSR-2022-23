@@ -37,3 +37,7 @@ Valor obtido de acertos 0 com o tempo de 2.042
 Valor obtido de acertos 0 com o tempo de 1.542
 Valor obtido de acertos 0 com o tempo de 4.557
 Valor obtido de acertos 1 com o tempo de 1.115
+Valor obtido de acertos 0 com o tempo de 1.082
+Valor obtido de acertos 0 com o tempo de 41.5
+Valor obtido de acertos 2 com o tempo de 10.155
+Valor obtido de acertos 1 com o tempo de 5.493
