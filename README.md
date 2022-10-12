@@ -15,6 +15,7 @@ Após o termino do jogo serão apresentadas diferentes paramêtros que resumem o
 
 ## Execução do jogo
 Para executar o typing test, no diretório da pasta com os ficheiros .py executar no terminal o seguinte comando:
+
 `$ python3 run.py -mv 5`   
 
 ou
@@ -29,13 +30,14 @@ O comando opcional -utm seconds, com seconds = segundos até ao fim do jogo, ati
 
 Foram geradas listas que armazenam as letras pedidas ao utilizador pelo computador e as letras que o utilizador respondeu, bem como o tempo entre cada input. 
 
- A hora de inicio e fim do jogo, obtidas usando o módulo time, permitiram saber a duração do teste bem como o tempo médio necessário ao utilizar para acertar ou errar uma letra. 
+ A hora de inicio e fim do jogo, obtidas usando o módulo time, permitiram saber a duração do teste bem como o tempo médio necessário ao utilizador para acertar ou errar uma letra. 
 
- Estas listas e valores foram depois usadas para calcular estatisticas como a taxa de acerto (accuracy) e o número de letras erradas e certas.
+ Estas listas e valores foram depois usados para calcular estatisticas como a taxa de acerto (accuracy) e o número de letras erradas e certas.
 
 Por fim estes valores foram armazenados num dicionário que é mostrado com recurso ao package prettyprint que permite ao utilizador a visualização de todos os parametros {accuracy, inputs, number_of_hits, number_of_types, test_duration, test_end, test_start, type_average_duration, type_hit_average_duration, type_miss_average_duration}.
 
-Foi feita uma  personalização das cores disponibilizadas no terminal durante o jogo, para uma melhor compreensão, com recurso ao módulo colorama que pode ser instalado usando:
+Foi feita uma personalização das cores disponibilizadas no terminal durante o jogo, para uma melhor compreensão, com recurso ao módulo colorama que pode ser instalado usando:
+
 `$ pip install colorama`.
 
 O ficheiro records.txt  definido pela função write armazena um histórico e mostra o número de letras corretas e o tempo total de cada jogo.
